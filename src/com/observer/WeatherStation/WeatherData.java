@@ -1,4 +1,4 @@
-package com.observer;
+package com.observer.WeatherStation;
 
 import org.json.JSONObject;
 
