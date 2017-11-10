@@ -18,7 +18,7 @@ class CurrentConditionsDisplay implements Observable,DisplayElement{
     }
 
     public void display() {
-        System.out.println("Current conditions: "  +_currentTemp + " C degrees and " + _currentHumidity + "% humidity");
+        System.out.println("Current conditions: "  +_currentTemp + "C degrees and " + _currentHumidity + "% humidity and pressure: "+ _currentPressure + "mmhg");
     }
 
     public void update(float temp, float humidity, float pressure) {
