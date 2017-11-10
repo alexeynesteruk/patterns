@@ -9,7 +9,7 @@ class WeatherData {
 
     WeatherData(JSONObject json){
         JSONObject weather = (JSONObject) json.get("main");
-        temp = KtoC(getValue(weather,"temp"));
+        temp = getValue(weather,"temp");
         humidity = getValue(weather,"humidity");
         pressure = getValue(weather,"pressure");
     }
