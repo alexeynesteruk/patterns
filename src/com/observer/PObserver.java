@@ -1,20 +1,24 @@
 package com.observer;
 
 import com.observer.Interfaces.DisplayElement;
-import com.observer.Interfaces.Observable;
-import com.observer.Interfaces.Subject;
+import com.observer.WeatherStation.WeatherData;
 import com.observer.WeatherStation.WeatherStation;
 
-class CurrentConditionsDisplay implements Observable,DisplayElement{
+import java.util.Observable;
+import java.util.Observer;
+
+
+class CurrentConditionsDisplay implements Observer,DisplayElement{
     private float _currentTemp = 0;
     private float _currentHumidity = 0;
     private float _currentPressure = 0;
 
-    private Subject weatherData;
+    private Observable observable;
 
-    CurrentConditionsDisplay(Subject weatherData){
-        this.weatherData = weatherData;
-        weatherData.subscribe(this);
+
+    CurrentConditionsDisplay(Observable observable){
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     private float computeHeatIndex(float t, float rh) {
@@ -34,15 +38,18 @@ class CurrentConditionsDisplay implements Observable,DisplayElement{
         System.out.println("Heat index is " + computeHeatIndex(_currentTemp,_currentHumidity));
     }
 
-    public void update(float temp, float humidity, float pressure) {
-        this._currentTemp = temp;
-        this._currentHumidity = humidity;
-        this._currentPressure = pressure;
-        display();
+    public void update(Observable obs, Object arg) {
+        if(obs instanceof WeatherStation){
+            WeatherStation weatherStation = (WeatherStation)obs;
+            this._currentTemp = weatherStation.getTemp();
+            this._currentHumidity = weatherStation.getHumidity();
+            this._currentPressure = weatherStation.getPressure();
+            display();
+        }
     }
 }
 
-public class Observer {
+public class PObserver {
     public static void main(String[] args) {
         CurrentConditionsDisplay display = new CurrentConditionsDisplay(new WeatherStation());
     }

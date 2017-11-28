@@ -1,14 +1,11 @@
 package com.observer.WeatherStation;
 
-import com.observer.Interfaces.Observable;
-import com.observer.Interfaces.Subject;
+import java.util.Observable;
 
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class WeatherStation implements Subject {
-    private ArrayList<Observable> _observerList = new ArrayList<>();
+public class WeatherStation extends Observable {
 
     private float _currentTemp = 0;
     private float _currentHumidity = 0;
@@ -39,7 +36,8 @@ public class WeatherStation implements Subject {
     }
 
     private void measurementsChanged() {
-        notifySubscribers();
+        setChanged();
+        notifyObservers();
     }
 
     private void refreshMeasurements() {
@@ -49,19 +47,15 @@ public class WeatherStation implements Subject {
         }
     }
 
-    public void subscribe(Observable observer) {
-        if (!_observerList.contains(observer)) {
-            _observerList.add(observer);
-        }
+    public float getTemp(){
+        return _currentTemp;
     }
 
-    public void unSubscribe(Observable observer) {
-        if (_observerList.contains(observer)) {
-            _observerList.remove(observer);
-        }
+    public float getHumidity(){
+        return _currentHumidity;
     }
 
-    public void notifySubscribers() {
-        _observerList.forEach((o) -> o.update(_currentTemp, _currentHumidity, _currentPressure));
+    public float getPressure() {
+        return _currentPressure;
     }
 }

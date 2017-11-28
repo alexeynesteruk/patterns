@@ -2,7 +2,7 @@ package com.observer.WeatherStation;
 
 import org.json.JSONObject;
 
-class WeatherData {
+public class WeatherData {
     float temp;
     float humidity;
     float pressure;
