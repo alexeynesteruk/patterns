@@ -1,13 +1,13 @@
-package com.decorator;
+package com.decorator.Starbuzz;
 
-import com.decorator.Addons.Mocha;
-import com.decorator.Addons.Soy;
-import com.decorator.Addons.Whip;
-import com.decorator.Base.Beverage;
-import com.decorator.Base.Size;
-import com.decorator.Beverages.DarkRoast;
-import com.decorator.Beverages.Expresso;
-import com.decorator.Beverages.HouseBlend;
+import com.decorator.Starbuzz.Addons.Mocha;
+import com.decorator.Starbuzz.Addons.Soy;
+import com.decorator.Starbuzz.Addons.Whip;
+import com.decorator.Starbuzz.Base.Beverage;
+import com.decorator.Starbuzz.Base.Size;
+import com.decorator.Starbuzz.Beverages.DarkRoast;
+import com.decorator.Starbuzz.Beverages.Expresso;
+import com.decorator.Starbuzz.Beverages.HouseBlend;
 
 public class Starbuzz {
     public static void main(String args[]){

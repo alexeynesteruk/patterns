@@ -1,6 +1,6 @@
-package com.decorator.Addons;
+package com.decorator.Starbuzz.Addons;
 
-import com.decorator.Base.*;
+import com.decorator.Starbuzz.Base.*;
 
 public class Mocha extends CondimentDecorator {
     Beverage beverage;

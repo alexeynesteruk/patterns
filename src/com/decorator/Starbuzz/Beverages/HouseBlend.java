@@ -1,6 +1,6 @@
-package com.decorator.Beverages;
+package com.decorator.Starbuzz.Beverages;
 
-import com.decorator.Base.Beverage;
+import com.decorator.Starbuzz.Base.Beverage;
 
 public class HouseBlend extends Beverage {
     public HouseBlend(){

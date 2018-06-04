@@ -1,7 +1,6 @@
-package com.decorator.Beverages;
+package com.decorator.Starbuzz.Beverages;
 
-import com.decorator.Base.Beverage;
-import com.decorator.Base.Size;
+import com.decorator.Starbuzz.Base.Beverage;
 
 public class DarkRoast extends Beverage {
     public DarkRoast(){

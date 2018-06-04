@@ -1,4 +1,4 @@
-package com.decorator.Base;
+package com.decorator.Starbuzz.Base;
 
 public abstract class Beverage {
     protected String _description = "Unknown Beverage";
