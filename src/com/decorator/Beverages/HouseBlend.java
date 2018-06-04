@@ -1,8 +1,8 @@
-package com.decorator.Baverages;
+package com.decorator.Beverages;
 
-import com.decorator.Base.Baverage;
+import com.decorator.Base.Beverage;
 
-public class HouseBlend extends Baverage {
+public class HouseBlend extends Beverage {
     public HouseBlend(){
         _description = "House Blend Coffee";
     }

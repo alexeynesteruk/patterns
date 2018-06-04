@@ -1,8 +1,8 @@
-package com.decorator.Baverages;
+package com.decorator.Beverages;
 
-import com.decorator.Base.Baverage;
+import com.decorator.Base.Beverage;
 
-public class Decaf extends Baverage {
+public class Decaf extends Beverage {
     public Decaf(){
         _description = "Decaf Coffee";
     }

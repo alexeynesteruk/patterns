@@ -1,8 +1,8 @@
-package com.decorator.Baverages;
+package com.decorator.Beverages;
 
-import com.decorator.Base.Baverage;
+import com.decorator.Base.Beverage;
 
-public class Expresso extends Baverage {
+public class Expresso extends Beverage {
 
     public Expresso(){
         _description = "Expresso";
